@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    flex: 1;
+    text-align: center;
+}
+
+table {
+    width: 100%; /* Make the table fill its container */
+    border-collapse: collapse; /* Collapse table borders */
+}
+.table-container{
+    overflow-x: auto; /* Add horizontal scroll if needed */
+    border: 2px solid black; /* Add border around the table */
+    border-radius: 8px; /* Add border radius */
+    margin-left: 12px;
+    margin-top: -300px;
+    padding: 10px; /* Add padding to the container */
+}
+th {
+    background-color: #2462AB; /* Set background color for table header cells */
+    color: white; /* Set text color for table header cells */
+    padding: 10px; /* Add padding to table header cells */
+    justify-content: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    border: 3px soild black;
+}
+.btn-container:hover {
+    border: #000;
+}
