@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OJT Trainees</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="ojtTable">
+  
+    <!-- Include the template -->
+    <div id="templateContainer"></div>
+
+    <div class="table">
+        <table>
+            <caption>
+              <div id="ojt">
+                <h1>OJT TRAINEE</h1>
+              </div>
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Province</th>
+                <th scope="col">Name of School</th>
+                <th scope="col">Name of Student</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Recommendation Letter</th>
+                <th scope="col">Application Form</th>
+                <th scope="col">CV / Resume</th>
+                <th scope="col">Medical Certificate</th>
+                <th scope="col">Work Plan Form</th>
+                <th scope="col">Interview Form</th>
+                <th scope="col">Acceptance Letter</th>
+                <th scope="col">WFH Agreement</th>
+                <th scope="col">NDA</th>
+                <th scope="col">Work Assignment</th>
+                <th scope="col">WAR</th>
+                <th scope="col">Timesheet</th>
+                <th scope="col">COC</th>
+                <th scope="col">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Province">Batangas</td>
+                <td data-label="Name of School">04/01/2016</td>
+                <td data-label="Name of Student">John Altab an, Jr.</td>
+                <td data-label="Duration">03/01/2016 - 03/31/2016</td>
+                <td data-label="Start Date">
+                  <input type="date">
+                </td>
+                <td data-label="Status">
+                  <select name="status" id="statusA">
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+                <td data-label="Reqs"> <input id="checkbox"  type="checkbox"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+</body>
+<script>
+  fetch('sidebar.html')
+      .then(response => response.text())
+      .then(template => {
+          // Insert the template content
+          document.getElementById('templateContainer').innerHTML = template;
+          
+          // Run any JavaScript specific to the template
+          // For example, if there's a script.js file linked in the template
+          // you can include it here
+          const script = document.createElement('script');
+          script.src = 'script.js';
+          document.body.appendChild(script);
+      })
+      .catch(error => console.error('Error fetching template:', error));
+</script>
+
+</html>
