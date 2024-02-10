@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!----======== CSS ======== -->
+    <title>OJT Trainees</title>
     <link rel="stylesheet" href="formstyle.css">
-     
-    <!----===== Iconscout CSS ===== -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <title>Engaged Partners</title> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous"></script>
+    <script src="formscript.js"></script>
 </head>
-<body>
+
+<body class="ojtTable">
+  
+    <!-- Include the template -->
+    <div id="templateContainer"></div>
     <div class="container">
-        <header>Engage Partners: Form</header>
 
         <form action="#">
+            <header>Engagement Partners: Form</header>
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Training Details</span>
@@ -26,16 +27,16 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>No.</label>
-                            <input type="number" required>
+                            <input type="number">
                         </div>
                         <div class="input-field">
                             <label>Title of Training</label>
-                            <input type="text" placeholder="Enter the Title of Training" required>
+                            <input type="text" placeholder="Enter the Title of Training">
                         </div>
 
                         <div class="input-field">
                             <label>Date Conducted</label>
-                            <input type="date" placeholder="Enter the date conducted" required>
+                            <input type="date" placeholder="Enter the date conducted">
                         </div>
 
                     </div>
@@ -82,21 +83,92 @@
                             <input type="number" placeholder="Enter ward number" required>
                         </div>
                     </div>
+
+                    <!-- Move the "Next" button inside this div -->
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+                        <button class="nextBtn">
+                            <span class="btnText">Next</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form third">
+                <div class="details honoraria">
+                    <span class="title">Documents for Honoraria Processing</span>
+                    <div class="fields">
+                        <label for="cars">Status of Honoraria:</label>
+                            <select name="status" id="status">
+                            <option value="volvo">N/A</option>
+                            <option value="saab">N/A</option>
+                            <option value="mercedes">N/A</option>
+                            <option value="audi">N/A</option>
+                            </select>
+                        <div class="input-field">
+                            <label>Amount</label>
+                            <input type="number" placeholder="Enter Contact Number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contract</label>
+                            <input type="text" holder="Enter your Email Address" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Terminal Report</label>
+                            <input type="text" placeholder="" required>
+                        </div>
+
+                        <label>
+                            <input type="checkbox" name="resume" value="resume">
+                            Resume
+                        </label>
+                          <br>
+                        <label>
+                            <input type="checkbox" name="payslip" value="payslip">
+                            Payslip
+                        </label>
+                          <br>
+                        <label>
+                            <input type="checkbox" name="vaildId" value="validId">
+                            Valid ID
+                        </label>
+                    </div>
                 </div>
                 <div class="buttons">
-                    <div class="backBtn">
-                        <i class="uil uil-navigator"></i>
+                    <button class="back">
                         <span class="btnText">Back</span>
-                    </div>
-                    <button class="nextBtn">
-                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                    <button class="submitBtn">
+                        <span class="btnText">Submit</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div>
             </div>
         </form>
-    </div>
+    </div>  
 </body>
-<script src="formscript.js"></script>
+<script>
+  fetch('sidebar.html')
+      .then(response => response.text())
+      .then(template => {
+          // Insert the template content
+          document.getElementById('templateContainer').innerHTML = template;
+          
+          // Run any JavaScript specific to the template
+          // For example, if there's a script.js file linked in the template
+          // you can include it here
+          const script = document.createElement('script');
+          script.src = 'script.js';
+          document.body.appendChild(script);
+      })
+      .catch(error => console.error('Error fetching template:', error));
+</script>
 
 </html>
