@@ -1,302 +1,151 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1f1f1; /* Changed background color for better visibility */
-}
-
 .container {
-    max-width: 4000px; /* Adjusted max-width for better layout */
-    margin: 0 15px;
-    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin-top: 40px;
 }
 
-.container header {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px; /* Added margin for better spacing */
-}
-
-.container header::before {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 27px;
-    border-radius: 8px;
-    background-color: #4070f4;
-    margin-bottom: 10px; /* Added margin for better spacing */
-}
 
 .container form {
-    position: relative;
     background-color: #fff;
     padding: 30px;
     border-radius: 6px;
-    width: 800px;
-    height: 400px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
 }
 
-.container form .form {
-    position: absolute;
-    background-color: #fff;
-    transition: 0.3s ease;
-    
+.container form header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-
-.container form .form.second {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-}
-
-form.secActive .form.second {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-
-form.secActive .form.first {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-}
-
-.container form .title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    margin: 6px 0;
+.container form .details {
+    margin-bottom: 30px;
 }
 
 .container form .fields {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-form .fields .input-field {
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
+.container form .container-title {
+    font-size: 20px; /* Increase font size for better visibility */
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    margin-right: 500px; /* Align items vertically */
 }
 
-.input-field label {
-    font-size: 12px;
+.container form .input-field {
+    flex: 0 0 calc(30% - 10px);
+    margin-bottom: 10px;
+}
+
+.container form .input-field label {
+    font-size: 14px;
     font-weight: 500;
     color: #2e2e2e;
+    margin-bottom: 5px;
 }
 
-.input-field input, select {
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
-}
-
-.input-field input:focus,
-.input-field select:focus {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-
-.input-field select,
-.input-field input[type="date"] {
-    color: #707070;
-}
-
-.input-field input[type="date"]:valid {
-    color: #333;
-}
-
-.container form button, .backBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
+.container form .input-field input,
+.container form .input-field select {
     width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    margin: 25px 0;
-    background-color: #4070f4;
-    transition: all 0.3s linear;
-    cursor: pointer;
-}
-
-.container form .btnText {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-form button:hover {
-    background-color: #265df2;
-}
-
-form button i,
-form .backBtn i {
-    margin: 0 6px;
-}
-
-form .backBtn i {
-    transform: rotate(180deg);
-}
-
-form .buttons {
-    display: flex;
-    align-items: center;
-}
-
-form .buttons button, .backBtn {
-    margin-right: 14px;
-}
-/*Third Form*/
-.container form .form.third {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-}
-
-form.secActive .form.third {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-
-.container form .form.third .title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    margin: 6px 0;
-}
-
-.container form .form.third .fields {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-form .form.third .fields .input-field {
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-}
-
-.form.third .input-field label {
-    font-size: 12px;
-    font-weight: 500;
-    color: #2e2e2e;
-}
-
-.form.third .input-field input,
-.form.third .input-field select {
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
+    height: 30px;
+    padding: 0 15px;
     border-radius: 5px;
     border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    outline: none;
 }
 
-.form.third .input-field input:focus,
-.form.third .input-field select:focus {
+.container form .input-field input:focus,
+.container form .input-field select:focus {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
 }
 
-.form.third .input-field select,
-.form.third .input-field input[type="date"] {
-    color: #707070;
-}
-
-.form.third .input-field input[type="date"]:valid {
-    color: #333;
-}
-
-.container form .form.third button,
-.container form .form.third .backBtn {
+.container form .buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 30px;
+    float: right;
+}
+
+.container form button.submitBtn {
+    width: 200px;
     height: 45px;
-    max-width: 200px;
-    width: 100%;
     border: none;
     outline: none;
     color: #fff;
     border-radius: 5px;
-    margin: 25px 0;
     background-color: #4070f4;
-    transition: all 0.3s linear;
+    transition: background-color 0.3s linear;
     cursor: pointer;
 }
 
-.container form .form.third .btnText {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.form.third button:hover {
+.container form button.submitBtn:hover {
     background-color: #265df2;
 }
 
-.form.third button i,
-.form.third .backBtn i {
-    margin: 0 6px;
-}
-
-.form.third .backBtn i {
-    transform: rotate(180deg);
-}
-
-.form.third .buttons {
-    display: flex;
+/**/
+.checkbox-container {
+    display: inline-flex; /* Display the checkboxes inline */
     align-items: center;
+    margin-bottom: 10px;
+    width: calc(33.33% - 5px); /* Set width to 33.33% for 3 columns and subtract 5px for margin-right */
 }
 
-.form.third .buttons button,
-.form.third .backBtn {
-    margin-right: 14px;
-}
-@media (max-width: 750px) {
-    .container form {
-        overflow-y: scroll;
-    }
-
-    .container form::-webkit-scrollbar {
-        display: none;
-    }
-
-    form .fields .input-field {
-        width: calc(100% / 2 - 15px);
-    }
+.checkbox-container:nth-child(3n + 1) {
+    margin-right: 10px; /* Add right margin to every third checkbox to create space between columns */
 }
 
-@media (max-width: 550px) {
-    form .fields .input-field {
-        width: 100%;
-    }
+.checkbox-container:nth-child(n + 4) {
+    margin-top: 10px; /* Add top margin to checkboxes starting from the fourth one to create space between rows */
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-size: 14px; /* Adjust font size for better alignment */
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-checkbox.checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.custom-checkbox.checked::after {
+    content: '\2713';
+    font-size: 16px; /* Adjust font size of checkmark for better visibility */
+    color: #fff;
+    position: relative;
+    top: -2px;
+    left: 5px;
+}
+
+.custom-checkbox:hover {
+    background-color: #f0f0f0;
+}
+
+.custom-checkbox input {
+    display: none;
 }
