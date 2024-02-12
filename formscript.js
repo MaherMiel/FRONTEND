@@ -45,3 +45,23 @@ document.addEventListener("DOMContentLoaded", function() {
             // For example: form.submit();
         });
     });
+// Checkbox part
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select all checkboxes
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+        // Add event listener to each checkbox
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                // Toggle a class when the checkbox is checked or unchecked
+                if (checkbox.checked) {
+                    checkbox.parentNode.classList.add("checked");
+                } else {
+                    checkbox.parentNode.classList.remove("checked");
+                }
+    
+                // Add your additional logic here for handling checkbox changes
+                console.log("Checkbox with id:", checkbox.id, "changed");
+            });
+        });
+    });
