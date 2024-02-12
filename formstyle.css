@@ -49,6 +49,13 @@
     margin-bottom: 10px;
 }
 
+.input-field select {
+    font-size: 15px; /* Font size for the dropdown */
+}
+
+.input-field select option {
+    font-size: 15px; /* Font size for the options within the dropdown */
+}
 .container form .input-field label{
     font-size: 14px;
     font-weight: 500;
