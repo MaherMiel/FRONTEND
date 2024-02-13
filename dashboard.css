@@ -22,12 +22,21 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+<<<<<<< HEAD
+    color: #003459;
+=======
+>>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
   }
   
   .main-cards {
     display: grid;
+<<<<<<< HEAD
+    grid-template-columns: 330px 330px 330px 330px;
+    gap: 10px;
+=======
     grid-template-columns: 300px 300px 300px 300px;
     gap: 20px;
+>>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
   }
   
   .card {
@@ -37,7 +46,13 @@
     padding: 25px;
     border-radius: 5px;
   }
+<<<<<<< HEAD
+  .main-cards :hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+=======
   
+>>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
   .card:first-child {
     background-color: #2962ff;
   }
@@ -65,11 +80,20 @@
   }
   
   .charts {
+<<<<<<< HEAD
+    display: grid;
+    grid-template-columns: 666px 666px;
+    gap: 20px;
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+=======
     size: 100px;
     display: grid;
     grid-template-columns: 650px 650px;
     gap: 20px;
     margin-top: 60px;
+>>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
   }
   
   .charts-card {
