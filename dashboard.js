@@ -5,17 +5,13 @@ const barChartOptions = {
     series: [
       {
         data: [10, 8, 6, 4, 2],
-<<<<<<< HEAD
         name: 'OJT Trainees',
-=======
-        name: 'Products',
->>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
       },
     ],
     chart: {
       type: 'bar',
       background: 'transparent',
-      height: 350,
+      height: 455,
       toolbar: {
         show: false,
       },
@@ -119,7 +115,6 @@ const barChartOptions = {
   const areaChartOptions = {
     series: [
       {
-<<<<<<< HEAD
         name: 'Batangas',
         data: [15, 10, 9, 15, 24, 19, 10],
       },
@@ -138,30 +133,18 @@ const barChartOptions = {
       {
         name: 'Rizal',
         data: [9, 17, 8, 32, 14, 23, 20],
-=======
-        name: 'Purchase Orders',
-        data: [31, 40, 28, 51, 42, 109, 100],
-      },
-      {
-        name: 'Sales Orders',
-        data: [11, 32, 45, 32, 34, 52, 41],
->>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
       },
     ],
     chart: {
       type: 'area',
       background: 'transparent',
-      height: 350,
+      height: 450,
       stacked: false,
       toolbar: {
         show: false,
       },
     },
-<<<<<<< HEAD
     colors: ['#2962ff', '#d50000', '#2e7d32', '#ff6d00', '#583cb3'],
-=======
-    colors: ['#00ab57', '#d50000'],
->>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     dataLabels: {
       enabled: false,
@@ -223,25 +206,7 @@ const barChartOptions = {
     yaxis: [
       {
         title: {
-<<<<<<< HEAD
           text: 'Number of OJT per Province',
-=======
-          text: 'Purchase Orders',
-          style: {
-            color: '#f5f7ff',
-          },
-        },
-        labels: {
-          style: {
-            colors: ['#f5f7ff'],
-          },
-        },
-      },
-      {
-        opposite: true,
-        title: {
-          text: 'Sales Orders',
->>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
           style: {
             color: '#f5f7ff',
           },
@@ -260,7 +225,6 @@ const barChartOptions = {
     },
   };
   
-<<<<<<< HEAD
   function filterByProvince(areaChartOptions, provinceName) {
     const filteredSeries = areaChartOptions.series.filter((item) => item.name.toLowerCase() === provinceName.toLowerCase());
     return { ...areaChartOptions, series: filteredSeries };
@@ -271,11 +235,64 @@ const barChartOptions = {
   console.log(filteredOptions);
   
 
-=======
->>>>>>> db21042ccfa82447da16d047d7e4660ee8b53dfe
   const areaChart = new ApexCharts(
     document.querySelector('#area-chart'),
     areaChartOptions
   );
   areaChart.render();
-  
+// widget
+const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+}
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return `${DAYS[date.getDay()]}, ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
