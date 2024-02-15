@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous"></script>
     <!-- Include ApexCharts library -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
     <!-- Include your dashboard.js script -->
     <script src="dashboard.js" defer></script>
 </head>
@@ -21,38 +22,35 @@
             <div class="main-title">
               <h2>DASHBOARD</h2>
             </div>
-    
-            <div class="main-cards">
-    
-              <div class="card">
+            <div class="main-cards1">
+              <div class="card1">
                 <div class="card-inner">
                   <h3>EXAMS</h3>
                 </div>
                 <h1>249</h1>
               </div>
     
-              <div class="card">
+              <div class="card1">
                 <div class="card-inner">
-                  <h3>AVAILABLE TRAININGS/WEBINARS</h3>
+                  <h3>TRAININGS/WEBINARS</h3>
                 </div>
                 <h1>25</h1>
               </div>
     
-              <div class="card">
+              <div class="card1">
                 <div class="card-inner">
                   <h3>ENGAGED PARTNERS</h3>
                 </div>
                 <h1>1500</h1>
               </div>
     
-              <div class="card">
+              <div class="card1">
                 <div class="card-inner">
                   <h3>ALERTS</h3>
                 </div>
                 <h1>56</h1>
               </div>
-    
-              <div class="card">
+              <div class="card1">
                 <div class="card-inner">
                   <link rel="preconnect" href="https://fonts.googleapis.com">
                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,23 +61,46 @@
                   </div>
                 </div>
               </div>
-              
             </div>
+
+            <div class="titlebar">
+              <h1>Target OJT vs  Actual OJT</h1>
+            </div>
+            
+            <div class="main-cards">
     
-            <div class="charts">
-    
+              <div class="card">
+                <h2 id="province">Batangas</h2>
+                <div id="chart-1" class="chart-container"></div>
+              </div>
+              <div class="card">
+                <h2 id="province">Cavite</h2>
+                <div id="chart-2" class="chart-container"></div>
+              </div>
+              <div class="card">
+                <h2 id="province">Laguna</h2>
+                <div id="chart-3" class="chart-container"></div>
+              </div>
+              <div class="card">
+                <h2 id="province">Quezon</h2>
+                <div id="chart-4" class="chart-container"></div>
+              </div>
+              <div class="card">
+                <h2 id="province">Rizal</h2>
+                <div id="chart-5" class="chart-container"></div>
+              </div>
+          </div>
+          <div class="charts">
               <div class="charts-card">
                 <h2 class="chart-title">OJT Trainees in CALABARZON</h2>
                 <div id="bar-chart"></div>
               </div>
-    
               <div class="charts-card">
                 <h2 class="chart-title">OJT Trainees Per Month</h2>
                 <div id="area-chart"></div>
               </div>
-    
             </div>
-          </main>
+        </main>
     </div>
 
     <!-- Your existing scripts here -->

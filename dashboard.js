@@ -11,7 +11,7 @@ const barChartOptions = {
     chart: {
       type: 'bar',
       background: 'transparent',
-      height: 455,
+      height: 235,
       toolbar: {
         show: false,
       },
@@ -138,7 +138,7 @@ const barChartOptions = {
     chart: {
       type: 'area',
       background: 'transparent',
-      height: 450,
+      height: 235,
       stacked: false,
       toolbar: {
         show: false,
@@ -296,3 +296,54 @@ setInterval(() => {
   timeElement.textContent = formatTime(now);
   dateElement.textContent = formatDate(now);
 }, 200);
+
+// Function to create and render a pie chart
+function createPieChart(containerId, actual, target) {
+  var percentage = ((actual / target) * 100).toFixed(2); // Calculate percentage
+  
+  // Define colors for the two segments of the pie chart
+  var colors = ['#FF5733', '#3366FF'];
+
+  var options = {
+      chart: {
+          type: 'donut',
+          background: 'transparent',
+          height: 180,
+      },
+      series: [actual, target - actual], // Actual vs Remaining
+      
+      labels: ['Actual', 'Remaining'], // Modify the labels here
+      
+      tooltip: {
+          enabled: true,
+          formatter: function (val) {
+              return `${val.seriesName}: ${val.dataPointIndex === 0 ? actual : target - actual} students (${percentage}%)`;
+          }
+      },
+      legend: {
+          position: 'bottom', // Set the legend position to bottom
+          labels: {
+              colors: ['#ffffff', '#ffffff'] // Set the color of the font to white
+          }
+      },
+      colors: colors, // Set the colors for each side of the pie chart
+      plotOptions: {
+          donut: {
+              expandOnClick: true,
+          }
+      }
+  };
+
+  // Initialize the chart with options
+  var chart = new ApexCharts(document.querySelector(`#${containerId}`), options);
+
+  // Render the chart
+  chart.render();
+}
+
+// Create and render pie charts for each province
+createPieChart('chart-1', 8, 12); // Example data for province 1
+createPieChart('chart-2', 7, 12); // Example data for province 2
+createPieChart('chart-3', 6, 12); // Example data for province 3
+createPieChart('chart-4', 5, 12); // Example data for province 4
+createPieChart('chart-5', 4, 12); // Example data for province 5
