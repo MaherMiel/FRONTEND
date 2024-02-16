@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <script src="formscript.js"></script>
     <title>Create Account</title>
 </head>
 <body>
@@ -17,7 +18,8 @@
             <div class="col-12 col-lg-9 col-xl-7">
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
-                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-2">Create an Account</h3>
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-2"><b>Create an Account</b></h3>
+          
                   <hr class="mb-4">
                   <form>
       
@@ -25,7 +27,7 @@
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg" />
+                          <input type="text" id="firstName" class="form-control form-control-lg" oninput="convertToUppercase()" />
                           <label class="form-label" for="firstName">First Name</label>
                         </div>
       
@@ -53,7 +55,7 @@
       
                         <div class="form-outline">
                           <input type="text" id="phoneNumber" class="form-control form-control-lg" />
-                          <label class="form-label" for="phoneNumber">Phone Number </label>
+                          <label class="form-label" for="phoneNumber">Phone Number</label>
                         </div>  
       
                       </div>
@@ -82,16 +84,16 @@
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="password" id="firstName" class="form-control form-control-lg" />
-                          <label class="form-label" for="firstName">Password</label>
+                          <input type="password" id="password" class="form-control form-control-lg" />
+                          <label class="form-label" for="password">Password</label>
                         </div>
       
                       </div>
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="password " id="lastName" class="form-control form-control-lg" />
-                          <label class="form-label" for="lastName">Confirm Password</label>
+                          <input type="password" id="confirmPassword" class="form-control form-control-lg" />
+                          <label class="form-label" for="confirmPassword">Confirm Password</label>
                         </div>
       
                       </div>  
@@ -106,7 +108,7 @@
                     </div>  
 
                     <div class="input-group mb-1">
-                      <button class="btn btn-lg btn-primary w-100 fs-6">Sign Up</button>
+                      <button class="btnSign btn-lg  w-100 fs-6">Sign Up</button>
                     </div>
       
                   </form>

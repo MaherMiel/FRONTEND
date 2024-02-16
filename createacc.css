@@ -3,13 +3,16 @@ body{
     background-color: #003459;
 }
 
-.btn{
+.form-label{
+    font-family: 'Poppins', sans-serif;
+}
+.btnSign{
     background-color: #003459;
+    color:#fff;
 }
 
-h2{ 
-    color: #003459;
-    font-weight: bold;
+hr{
+    height: 3px;
 }
 
 .img-fluid{
@@ -27,24 +30,20 @@ h2{
 }
 
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: #003459;
-}
-
 h3{
     font-family: 'Poppins', sans-serif;
     color: #003459;
     font-weight: bold; 
 }
 
-.btn{
-    align-items: center;
+.form-check-input{
+    
 }
+
 
 .gradient-custom {
     /* fallback for old browsers */
-    background: #f093fb;
+    background: #39119c;
     
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));

@@ -65,3 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
+ function convertToUppercase() {
+        var inputElement = document.getElementById('firstName');
+        inputElement.value = inputElement.value.toUpperCase();
+    }
